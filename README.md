@@ -1,30 +1,33 @@
-# Environment of nuxt.js project 
+# Environment of nuxt.js project
 
-```
-    [+] AUTOR:        Gerardo Junior
-    [+] SITE:         https://gerardo-junior.com
-    [+] EMAIL:        me@gerardo-junior.com
-    [+] GITHUB:       https://github.com/gerardo-junior/nuxtjs-docker.git
-    [+] TELEGRAM:     @MrGerardoJunior
+```bash
+    [+] AUTOR:        Markus Luckey
+    [+] CREDITS:      Gerardo Junior
+    [+] SITE:         https://kernblick.de
+    [+] EMAIL:        luckey@kernblick.de
+    [+] GITHUB:       https://github.com/kernblick/nuxtjs-docker.git
 ```
 
-[![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/gerardojunior/nuxtjs)
+[![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/kernblick/nuxtjs)
 
 Docker image to run [nuxt.js](https://nuxtjs.org) projects
 
-> The project must be in the **/src** container folder 
+> The project must be in the **/src** container folder
+
 ## Tags available
 
-- [stable](https://github.com/gerardo-junior/nuxtjs-docker/blob/master/Dockerfile), [latest](https://github.com/gerardo-junior/nuxtjs-docker/blob/develop/Dockerfile), [1.0.0](https://github.com/gerardo-junior/nuxtjs-docker/blob/1.0.0/Dockerfile)
-  - [gerardojunior/nodejs](https://hub.docker.com/r/gerardojunior/nodejs) 1.0.0
-    - [nodejs](https://nodejs.org) 8.15.0
-    - [yarn](https://yarnpkg.com/) 1.12.3
+- [latest](https://github.com/kernblick/nuxtjs-docker/blob/develop/Dockerfile)
+  - [kernblick/nodejs](https://hub.docker.com/r/kernblick/nodejs) 17.1.0
+    - [nodejs](https://nodejs.org) 17.1.0
+    - [yarn](https://yarnpkg.com/) 1.22.15
 
-## Come on, do your tests
+## Run
 
 ```bash
-docker pull gerardojunior/nuxtjs:stable
+docker pull kernblick/nuxtjs:stable
+docker run kernblick/nuxtjs
 ```
+
 ## How to build
 
 to build the image you need install the [docker engine](https://www.docker.com/) only
@@ -32,21 +35,22 @@ to build the image you need install the [docker engine](https://www.docker.com/)
 > You can try building with different versions of software with docker args, for example: NODE_ENV=1.0.0
 
 ```bash
-docker build https://github.com/gerardo-junior/nuxtjs-docker.git --tag gerardojunior/nuxtjs
+docker build https://github.com/kernblick/nuxtjs-docker.git --tag kernblick/nuxtjs
 ```
 
 ## How to use
 
-##### Only with docker command:
+### Only with docker command
 
 ```bash
 # in your project folder
-docker run -it --rm -v $(pwd):/src -p 3000:3000 gerardojunior/nuxtjs:stable [command]
+docker run -it --rm -v $(pwd):/src -p 3000:3000 kernblick/nuxtjs:stable [command]
 
 # or docker-compose
 docker-compose run nuxt [command]
 ```
-##### With [docker-compose](https://docs.docker.com/compose/)
+
+### With [docker-compose](https://docs.docker.com/compose/)
 
 Create the docker-compose.yml file  in your project folder with:
 
@@ -54,7 +58,7 @@ Create the docker-compose.yml file  in your project folder with:
 # (...)
 
   nuxt:
-    image: gerardojunior/nuxtjs:stable
+    image: kernblick/nuxtjs:stable
     restart: on-failure
     volumes:
       - type: bind
@@ -68,12 +72,13 @@ Create the docker-compose.yml file  in your project folder with:
 ```
 
 ## How to enter image shell
- 
+
 ```bash
-docker run -it --rm gerardojunior/nuxtjs sh
+docker run -it --rm kernblick/nuxtjs sh
 # or with docker-compose
 docker-compose run nuxt sh
 ```
 
-### License  
+## License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

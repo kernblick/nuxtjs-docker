@@ -1,10 +1,12 @@
-ARG NODE_ENV="1.0.0"
+ARG NODE_ENV="latest"
 
-# https://github.com/gerardo-junior/nodejs-docker
-FROM gerardojunior/nodejs:$NODE_ENV
+# https://github.com/kernblick/nodejs-docker
+FROM kernblick/nodejs:$NODE_ENV
 
-LABEL maintainer="Gerardo Junior <me@gerardo-junior.com>"
-LABEL url="https://github.com/gerardo-junior/nuxtjs-docker.git"
+LABEL maintainer="Markus Luckey <luckey@kernblick.de>"
+LABEL url="https://github.com/kernblick/nuxtjs-docker.git"
+
+RUN yarn global add nuxt
 
 # Variables of nuxt configure
 ENV HOST 0.0.0.0

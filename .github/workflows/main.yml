@@ -1,0 +1,19 @@
+name: Docker Image
+
+on:
+  push:
+    branches: '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: build-push
+        uses: docker/build-push-action@v1
+        with:
+           username: ${{ DOCKER_USERNAME }}
+           password: ${{ DOCKER_PASSWORD }}
+           registry: hub.docker.com
+           repository: kernblick/nuxtjs
+           tags: latest
